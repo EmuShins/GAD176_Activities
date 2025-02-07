@@ -22,7 +22,7 @@ namespace GAD176.WeeklyActivities.WeekOne
             Time.timeScale = 1;
 
             // find a reference to the user interface in the scene, find object will help
-            userInterface = null;
+            userInterface = FindFirstObjectByType();
 
             // set the player health to be the max health using ChangeHealth
             ChangeHealth(playerMaxHealth);
@@ -51,10 +51,10 @@ namespace GAD176.WeeklyActivities.WeekOne
         public void ChangeHealth(float amount)
         {
             // have the amount coming in be added to the playerhealth
-            playerHealth = 0;
+            playerHealth += amount;
 
             // here let's clamp the value using Mathf.Clamp and pass in the current health, min and max health
-            playerHealth = 0;
+            playerHealth = Mathf.Clamp(playerHealth, 0, 100);
 
             if (userInterface)
             {
@@ -62,9 +62,11 @@ namespace GAD176.WeeklyActivities.WeekOne
             }
 
             // check to see if the player is dead, if so call game over
-
-            Debug.Log("Game Over");
-            Time.timeScale = 0;
+            if(playerHealth==0)
+            {
+                Debug.Log("Game Over");
+                Time.timeScale = 0;
+            }
             
         }
         private void UpdateDistanceProgress()

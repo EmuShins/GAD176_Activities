@@ -6,13 +6,19 @@ namespace GAD176.WeeklyActivities.WeekOne
 {
     public class EndZone : MonoBehaviour
     {
+        public GameObject player;
+
         private void OnTriggerEnter(Collider other)
         {
             // check to see if the other has a reference to the player script.
-
+            
+            if(other==player)
+            {
                 // if so do a hack here, and just set time scale to 0 to pause the game
                 Time.timeScale = 0;
                 Debug.Log("Level Completed, Load Next Level");
+
+            }
         }
     }
 }
