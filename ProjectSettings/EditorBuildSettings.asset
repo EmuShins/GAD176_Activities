@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Activities/Week 2/Scenes/LunarLanderLevel_01.unity
+    guid: 963e553ccc39f4a46b64b8e7efa20685
+  - enabled: 1
+    path: Assets/Activities/Week 2/Scenes/LunarLanderLevel_02.unity
+    guid: 9ed2c7c9219a5af4498a4229c03d81d1
   m_configObjects: {}
